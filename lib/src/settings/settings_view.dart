@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:two_five/src/navigation/two_five_navigation_bar.dart';
 
 import 'settings_controller.dart';
 
@@ -15,9 +16,11 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController homeController = ScrollController();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -45,6 +48,10 @@ class SettingsView extends StatelessWidget {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: TwoFiveNavigationBar(
+        homeController: homeController,
+        currentIndex: 1,
       ),
     );
   }
