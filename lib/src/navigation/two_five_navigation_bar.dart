@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:two_five/src/sample_feature/sample_item_list_view.dart';
 import 'package:two_five/src/settings/settings_view.dart';
 
 class TwoFiveNavigationBar extends StatelessWidget {
