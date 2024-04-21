@@ -1,5 +1,9 @@
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:two_five/src/navigation/two_five_navigation_bar.dart';
+import 'package:two_five/src/providers/auth_provider.dart';
 
 import 'settings_controller.dart';
 
@@ -21,17 +25,22 @@ class SettingsView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Settings'),
         automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await Provider.of<TwoFiveAuthProvider>(context, listen: false)
+                  .auth
+                  .signOut();
+              Navigator.pushReplacementNamed(context, '/sign-in');
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        // Glue the SettingsController to the theme selection DropdownButton.
-        //
-        // When a user selects a theme from the dropdown list, the
-        // SettingsController is updated, which rebuilds the MaterialApp.
         child: DropdownButton<ThemeMode>(
-          // Read the selected themeMode from the controller
           value: controller.themeMode,
-          // Call the updateThemeMode method any time the user selects a theme.
           onChanged: controller.updateThemeMode,
           items: const [
             DropdownMenuItem(
