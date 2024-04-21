@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1008935605582",
+    "project_id": "two-five-app",
+    "storage_bucket": "two-five-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008935605582:android:3d08b57e0ba7eac3c5fa1f",
+        "android_client_info": {
+          "package_name": "systems.perceptual.two_five"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Ue41g0FdcaqnXghD3utYs1yQvol5Jpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
